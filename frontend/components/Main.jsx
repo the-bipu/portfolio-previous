@@ -4,14 +4,16 @@ import Navbar from '@/components/Navbar'
 
 export default function Main() {
   return (
-    <div id='main' className='dimension flex flex-col items-center bg-[#D9D9D9] p-10'>
+    <div id='main' className='w-[100%] lg:h-[745px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
         <Navbar />
         
-        <div className='flex lg:flex-row flex-col items-center color-[#000] py-12 lg:px-16 px-0'>
-          <img src="./Ellipse-3.png" alt="" className='w-[350px] h-[auto] z-0 absolute top-40 lg:left-40 left-15' />
-          <img src="./Ellipse-4.png" alt="" className='w-[auto] h-[auto] z-0 absolute bottom-10 left-40 sm:hidden' />
+        <div className='flex lg:flex-row flex-col lg:gap-0 gap-10 items-center color-[#000] py-12 lg:px-16 px-0'>
+          <img src="./Ellipse-3.png" alt="" className='w-[320px] h-[auto] z-0 absolute top-[170px] lg:left-[240px] left-15 lg:block hidden' />
+          <img src="./Ellipse-4.png" alt="" className='w-[auto] h-[auto] z-0 absolute bottom-0 left-30 lg:block hidden' />
+          <img src="./Ellipse-5.png" alt="" className='w-[auto] h-[auto] z-0 absolute top-[125px] right-10 lg:block hidden' />
+          <img src="./Ellipse-6.png" alt="" className='w-[auto] h-[auto] z-0 absolute top-[165px] left-0 lg:block hidden' />
 
-          <div className="text-[23px] lg:w-[55%] w-[100%] h-[auto] text-center lg:px-24 px-10 z-10">
+          <div className="normal-shadow text-[23px] lg:w-[55%] w-[100%] h-[auto] text-center lg:px-24 px-10 z-10">
             Hello 🍃 <br />
             I’m The-Bipu 🤖 and <br />
             I’m a Full-Stack Web Developer. 🖥️ <br /><br />
