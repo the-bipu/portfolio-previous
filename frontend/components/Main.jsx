@@ -1,6 +1,8 @@
+'use client';
 import Image from 'next/image'
 
 import Navbar from '@/components/Navbar'
+import { motion } from 'framer-motion';
 
 export default function Main() {
   return (
@@ -20,6 +22,7 @@ export default function Main() {
 
             An adept full-stack web developer, specializing in React and Next.js, crafts dynamic and user-friendly web applications with seamless front-end and robust back-end expertise. 
           </div>
+          
           <div className="profile lg:w-[50%] w-[100%] h-[auto] flex items-center justify-center">
             <img src="../profile.png" alt="" className='lg:w-[500px] w-[90%] h-[auto]' />
           </div>
