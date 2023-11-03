@@ -2,7 +2,8 @@ import Image from 'next/image'
 
 export default function Navbar() {
   return (
-    <div>
+    <div> 
+        {/* Add fixed here for making the navbar available for every page */}
         <div className='flex flex-row justify-center items-center gap-24 w-[80vw] h-[70px] bg-[#ffffff70] rounded-[50px] shadow-md'>
             <a href='#main' className="tab-div">Home</a>
             <a href='#about' className='tab-div'>About</a>
