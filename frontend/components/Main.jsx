@@ -7,9 +7,19 @@ export default function Main() {
     <div id='main' className='dimension flex flex-col items-center bg-[#D9D9D9] p-10'>
         <Navbar />
         
-        <div className='color-[#000]'>
-          <div className="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut distinctio cupiditate nemo, facilis totam odio. Dolorum, atque iure ab id ullam nam fuga, perspiciatis nesciunt at veritatis, vel laboriosam minus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, quae fugiat fugit at labore beatae tenetur aliquam recusandae iusto ratione quisquam consequuntur ex in, natus quasi? Quisquam asperiores recusandae delectus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dolore adipisci sint quas quisquam perferendis laborum nihil ipsa mollitia hic. Perspiciatis aut repellat reprehenderit velit? Sunt dolores deleniti adipisci animi. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi autem in consectetur, quidem excepturi libero aperiam eveniet ad magnam nobis exercitationem labore, recusandae minima provident sequi, nostrum a impedit. Ad? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nostrum consequuntur voluptatibus, suscipit aliquid, aliquam voluptatum ab cum optio modi fuga magni corrupti. Repellat ipsam voluptatem sed consequatur, quasi eligendi.
+        <div className='flex lg:flex-row flex-col items-center color-[#000] py-12 lg:px-16 px-0'>
+          <img src="./Ellipse-3.png" alt="" className='w-[350px] h-[auto] z-0 absolute top-40 lg:left-40 left-15' />
+          <img src="./Ellipse-4.png" alt="" className='w-[auto] h-[auto] z-0 absolute bottom-10 left-40 sm:hidden' />
+
+          <div className="text-[23px] lg:w-[55%] w-[100%] h-[auto] text-center lg:px-24 px-10 z-10">
+            Hello 🍃 <br />
+            I’m The-Bipu 🤖 and <br />
+            I’m a Full-Stack Web Developer. 🖥️ <br /><br />
+
+            An adept full-stack web developer, specializing in React and Next.js, crafts dynamic and user-friendly web applications with seamless front-end and robust back-end expertise. 
+          </div>
+          <div className="profile lg:w-[50%] w-[100%] h-[auto] flex items-center justify-center">
+            <img src="../profile.png" alt="" className='lg:w-[500px] w-[90%] h-[auto]' />
           </div>
         </div>
     </div>
