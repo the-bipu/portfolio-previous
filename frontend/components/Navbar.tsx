@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import { staggerContainer, slideIn, fadeIn, navVariants } from '../utils/motion';
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
@@ -12,10 +13,7 @@ export default function Navbar() {
     <div> 
         {/* Add fixed here for making the navbar available for every page */}
         <motion.div 
-          key="content"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
+          variants={navVariants} initial="hidden" whileInView="show"
           className='flex flex-row justify-evenly items-center w-[80vw] h-[70px] bg-[#ffffff70] rounded-[50px] shadow-md'
         >
 
