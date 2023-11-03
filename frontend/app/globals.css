@@ -29,9 +29,25 @@ body {
     rgb(var(--primary-color));
 }
 
+/* scroll-bar designing starts */
+
+html::-webkit-scrollbar {
+  width: .8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #aaaaaa;
+}
+
+/* scroll-bar designing ends */
+
 .dimension {
   width: 100%;
-  height: 800px;
+  height: 745px;
 }
 
 .tab-div {
@@ -40,4 +56,8 @@ body {
   font-size: 23px;
   font-weight: 500;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.normal-shadow {
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
