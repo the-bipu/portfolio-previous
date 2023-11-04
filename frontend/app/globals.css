@@ -89,10 +89,6 @@ html::-webkit-scrollbar-thumb {
     color: var(--secondary-color);
   }
 
-  @media screen and (min-width: 2000px) {
-    font-size: 4rem;
-  }
-
   @media screen and (max-width: 450px) {
     font-size: 2rem;
   }
@@ -117,5 +113,9 @@ html::-webkit-scrollbar-thumb {
 }
 
 .normal-box-shadow {
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px #00000033;
+}
+
+.normal-white-shadow {
+  box-shadow: 0 0 25px #fef4f5;
 }
