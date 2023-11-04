@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Main from '@/components/Main'
 import About from '@/components/About'
 import Work from '@/components/Work'
+import Skills from '@/components/Skills'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Main />
       <About />
       <Work />
+      <Skills />
     </main>
   )
 }
