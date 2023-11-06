@@ -27,7 +27,7 @@ export default function Skills() {
     }, [])
 
   return (
-    <div id='skills' className='w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#ffffff] p-10'>
+    <div id='skills' className='w-[100%] h-[auto] flex flex-col items-center bg-[#ffffff] p-10'>
         <Navbar />
 
         <motion.div
@@ -40,8 +40,8 @@ export default function Skills() {
             <motion.div className='flex-1 flex flex-wrap justify-center items-center'>
                 {skills?.map((skill) => (
                 <motion.div
-                    whileInView={{opacity: [0, 1]}}
-                    transition={{ duration: 0.5 }}
+                    whileInView={{ y: [-20, 0], opacity: [0, 1] }}
+                    transition={{ duration: 1, type: 'spring', stiffness:"120"}}
                     className='flex flex-col text-center m-[1rem] transition-normal app__flex hover:normal-box-shadow cursor-pointer'
                     key={skill.name}
                 >
@@ -71,42 +71,62 @@ export default function Skills() {
                         <React.Fragment key={work.name}>
 
                         <motion.div 
-                            whileInView={{opacity: [0, 1]}}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5, delay: workIndex % 2 === 0 ? 0 : 0.5 }}
+                            whileInView={{ x: [20, 0], opacity: [0, 1] }}
+                            transition={{ duration: 1, type: 'spring', stiffness:"120" }}
                             className='w-[600px] h-[auto] flex justify-center items-center flex-row gap-8'
                             data-tip
                             data-for={work.name}
                             key={work.name}
                         >
                             {workIndex % 2 === 0 && (
-                                <div className='w-[230px] rounded-[1rem] bg-[#D9D9D9] flex items-end justify-end flex-col p-10'>
+                                <motion.div 
+                                    className='w-[230px] rounded-[1rem] bg-[#ffffff] flex items-end justify-end flex-col p-10 new-shadow'
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                >
                                     <h4 className='bold-text'>{work.name}</h4>
                                     <p className='p-text'>{work.company}</p>
-                                </div>
+                                </motion.div>
                             )}
 
                             {workIndex % 2 !== 0 && (
-                                <div className='w-[230px] bg-[#D9D9D9]'>
+                                <motion.div 
+                                    className='w-[230px] bg-[#D9D9D9]'
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                >
                                     
-                                </div>
+                                </motion.div>
                             )}
 
-                            <div key={experience.year} className='w-[75px] h-[75px] rounded-[50%] mt-4 bg-[#707070] app__flex'>
+                            <motion.div 
+                                key={experience.year} 
+                                className='w-[75px] h-[75px] rounded-[50%] mt-4 bg-[#cacaca] app__flex new-shadow'
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                            >
                                 {experience.year}
-                            </div>
+                            </motion.div>
 
                             {workIndex % 2 === 0 && (
-                                <div className='w-[230px] bg-[#D9D9D9]'>
+                                <motion.div 
+                                    className='w-[230px] bg-[#D9D9D9]'
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                >
                                     
-                                </div>
+                                </motion.div>
                             )}
 
                             {workIndex % 2 !== 0 && (
-                                <div className='w-[230px] rounded-[1rem] bg-[#D9D9D9] flex items-start justify-start flex-col p-10'>
+                                <motion.div 
+                                    className='w-[230px] rounded-[1rem] bg-[#ffffff] flex items-start justify-start flex-col p-10 new-shadow'
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                >
                                     <h4 className='bold-text'>{work.name}</h4>
                                     <p className='p-text'>{work.company}</p>
-                                </div>
+                                </motion.div>
                             )}
 
                         </motion.div>
