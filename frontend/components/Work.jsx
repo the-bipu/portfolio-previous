@@ -54,13 +54,13 @@ export default function Work() {
         
         <div className='flex flex-row justify-start items-center flex-wrap mt-[1rem] mb-[1rem]'>
         {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
-          <div
+          <motion.div
             key={index}
             onClick={() => handleWorkFilter(item)}
             className={`py-[0.5rem] px-[1rem] rounded-[0.5rem] bg-[#fff] hover:bg-[#313bac] text-[#000] hover:text-[#fff] font-bold cursor-pointer m-[0.5rem] app__flex p-text transition-normal ${activeFilter === item ? 'bg-[#313bac] color-[#fff]' : ''}`}
           >
             {item}
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -70,7 +70,11 @@ export default function Work() {
           className='flex flex-wrap items-center justify-center'
         >
           {filterWork.map((work, index) => (
-            <div className='w-[270px] flex-col m-[2rem] p-[1rem] rounded-[0.5rem] bg-[#fff] text-[#000] cursor-pointer transition-normal app__flex hover:normal-box-shadow' key={index}>
+            <motion.div
+              whileInView={{ y: [-20, 0], opacity: [0, 1] }}
+              transition={{ duration: 1, type: 'spring', stiffness:"120"}}
+              className='w-[270px] flex-col m-[2rem] p-[1rem] rounded-[0.5rem] bg-[#fff] text-[#000] cursor-pointer transition-normal app__flex hover:normal-box-shadow' key={index}
+            >
               <div className='w-[100%] h-[230px] relative app__flex'>
                 <img src={urlFor(work.imgUrl)} alt={work.name} className='w-[100%] h-[100%] rounded-[0.5rem] object-cover' />
 
@@ -113,7 +117,7 @@ export default function Work() {
                 </div>
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </motion.div>
     </div>
