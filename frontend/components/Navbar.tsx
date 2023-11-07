@@ -21,11 +21,11 @@ export default function Navbar() {
                 <img src="./Ellipse-5.png" alt="" />
               </div>
 
+              <a href='#main' className="tab-div lg:block hidden jolly-lodger">The-Bipu</a>
               <a href='#main' className="tab-div lg:block hidden">Home</a>
               <a href='#about' className='tab-div lg:block hidden'>About</a>
               <a href='#work' className='tab-div lg:block hidden'>Work</a>
               <a href='#skills' className='tab-div lg:block hidden'>Skills</a>
-              <a href='#education' className='tab-div lg:block hidden'>Education</a>
               <a href='#contact' className='tab-div lg:block hidden'>Contact</a>
 
               <div className="w-[35px] h-[35px] flex items-center justify-center bg-blue-900 rounded-[50%] text-white text-[20px] cursor-pointer lg:hidden">
