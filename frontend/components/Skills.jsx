@@ -99,14 +99,16 @@ export default function Skills() {
 <div className='flex-1 flex justify-center items-center flex-col md:mt-[2rem] gap-5 mt-[2rem]'>
           {experiences.map((experience) => (
             <motion.div
-              className='w-[100%] h-[auto] flex flex-col p-5 hover:new-shadow cursor-pointer'
+              whileInView={{ x: [20, 0], opacity: [0, 1] }}
+              transition={{ duration: 1, type: 'spring', stiffness:"120" }}
+              className='w-[100%] h-[auto] flex flex-col p-10 new-shadow cursor-pointer'
               key={experience.year}
             >
-                <div className='app__skills-exp-year'>
-                  <p className='bold-text'>{experience.year}</p>
+                <div className=''>
+                  <p className='text-[1.4rem] font-bold'>{experience.year}</p>
                 </div>
 
-                <motion.div className='app__skills-exp-works'>
+                <motion.div className='flex flex-col gap-5'>
                 {experience.works.map((work) => (
                   // <>
                     <React.Fragment key={work.name}>
@@ -118,9 +120,9 @@ export default function Skills() {
                         data-for={work.name}
                         key={work.name}
                       >
-                        <h4 className='bold-text'>Worked as {work.name}</h4>
-                        <p className='p-text'>at {work.company}</p>
-                        <p className='p-text'>{work.desc}</p>
+                        <h4 className='text-[1.1rem] font-semibold'>Worked as {work.name}</h4>
+                        <p className='text-[1rem]'>at {work.company}</p>
+                        <p className='text-[1rem]'>{work.desc}</p>
                       </motion.div>
 
                   </React.Fragment>
@@ -134,3 +136,17 @@ export default function Skills() {
     </div>
   )
 }
+
+// .p-text {
+//     font-size: 0.8rem;
+//     text-align: left;
+//     color: var(--gray-color);
+//     line-height: 1.5;
+//   }
+  
+//   .bold-text {
+//     font-size: 1rem;
+//     font-weight: 800;
+//     color: var(--black-color);
+//     text-align: left;
+//   }
