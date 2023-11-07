@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
-import { staggerContainer, slideIn, fadeIn, navVariants } from '../utils/motion';
+import { navVariants, fadeIn } from '../utils/motion';
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
@@ -25,27 +25,42 @@ export default function Navbar() {
               <a href='#about' className='tab-div lg:block hidden'>About</a>
               <a href='#work' className='tab-div lg:block hidden'>Work</a>
               <a href='#skills' className='tab-div lg:block hidden'>Skills</a>
-              <a href='#testimonial' className='tab-div lg:block hidden'>Testimonial</a>
+              <a href='#education' className='tab-div lg:block hidden'>Education</a>
               <a href='#contact' className='tab-div lg:block hidden'>Contact</a>
 
               <div className="w-[35px] h-[35px] flex items-center justify-center bg-blue-900 rounded-[50%] text-white text-[20px] cursor-pointer lg:hidden">
-                <HiMenuAlt4 onClick={() => setToggle(true)} />
+                <HiMenuAlt4 onClick={() => setToggle(!toggle)} />
               </div>
         </motion.div>
 
-        <div className='app__navbar-menu absolute z-20 block lg:hidden left-0 top-0 h-[100vh] w-[50%]'>
+        <div className='lg:hidden h-[auto] w-[50%]'>
           { toggle && (
+            // ['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+            //   <motion.div
+            //     key={index}
+            //     variants={navVariants}
+            //     initial="hidden"
+            //     whileInView="show"
+            //     transition={{ duration: 0.85, ease: 'easeOut'}}
+            //     // className={`py-[0.5rem] px-[1rem] rounded-[0.5rem] bg-[#fff] hover:bg-[#313bac] text-[#000] hover:text-[#fff] font-bold cursor-pointer m-[0.5rem] app__flex p-text transition-normal color-[#fff]`}
+            //     className='w-[80vw] h-[auto] bg-[#ffffff70] rounded-[50px] shadow-md p-5'
+            //   >
+            //     {item}
+            //   </motion.div>
+            // ))
+
               <motion.div
-                whileInView={{ x: [-200, 0] }}
+                variants={navVariants}
+                initial="hidden"
+                whileInView="show"
                 transition={{ duration: 0.85, ease: 'easeOut'}}
-                className='bg-[#ffffffb5] w-[50vw] h-[100vh] p-24 flex flex-col items-start justify-center gap-4'
+                className='flex flex-col gap-5 justify-evenly items-center w-[80vw] h-[auto] bg-[#ffffff70] rounded-[50px] shadow-md p-5'
               >
-                <HiX onClick={() => setToggle(false)} />
                 <a href='#main' className="tab-div">Home</a>
                 <a href='#about' className='tab-div'>About</a>
                 <a href='#work' className='tab-div'>Work</a>
                 <a href='#skills' className='tab-div'>Skills</a>
-                <a href='#testimonial' className='tab-div'>Testimonial</a>
+                <a href='#education' className='tab-div'>Education</a>
                 <a href='#contact' className='tab-div'>Contact</a>
               </motion.div>
           )}
