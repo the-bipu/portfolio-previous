@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import Image from 'next/image'
 
-import Navbar from './Navbar';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
 
@@ -43,7 +42,6 @@ export default function Work() {
 
   return (
     <div id='work' className='w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
-        <Navbar />
 
         <motion.div
           variants={fadeIn('up', 'tween', 0.6, 1)}
