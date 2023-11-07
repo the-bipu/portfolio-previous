@@ -1,9 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react'
-import { Tooltip } from 'react-tooltip'
 import Image from 'next/image'
 
-import Navbar from './Navbar';
 import { motion } from 'framer-motion';
 import { urlFor, client } from '../app/client';
 
@@ -28,12 +26,11 @@ export default function Skills() {
 
   return (
     <div id='skills' className='w-[100%] h-[auto] flex flex-col items-center bg-[#ffffff] p-10'>
-        <Navbar />
 
         <motion.div
-          className='color-[#fff] text-[30px] pt-8 pb-2 text-center'
+          className='color-[#fff] text-[30px] text-[#000] pt-8 pb-2 text-center'
         >
-            <span className='text-[#000]'>Skills</span>
+            My Skills &<span className='text-[#0009D5]'> Experiences</span>
         </motion.div>
 
         <div className='lg:w-[80%] w-[100%] mt-[1rem] flex lg:flex-row flex-col'>
@@ -63,7 +60,7 @@ export default function Skills() {
             <span className='text-[#000]'>Experiences</span>
         </motion.div>
 
-        <div className='flex-1 flex justify-center items-center flex-col md:mt-[2rem]'>
+        {/* <div className='flex-1 flex justify-center items-center flex-col md:mt-[2rem]'>
             {experiences.map((experience, index) => (
                 <div className="w-[100%] h-[auto] flex flex-col justify-center items-center">
 
@@ -73,61 +70,22 @@ export default function Skills() {
                         <motion.div 
                             whileInView={{ x: [20, 0], opacity: [0, 1] }}
                             transition={{ duration: 1, type: 'spring', stiffness:"120" }}
-                            className='w-[600px] h-[auto] flex justify-center items-center flex-row gap-8'
+                            className='w-[600px] h-[auto] flex justify-center items-center flex-col gap-8'
                             data-tip
                             data-for={work.name}
                             key={work.name}
                         >
-                            {workIndex % 2 === 0 && (
-                                <motion.div 
-                                    className='w-[230px] rounded-[1rem] bg-[#ffffff] flex items-end justify-end flex-col p-10 new-shadow'
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                >
-                                    <h4 className='bold-text'>{work.name}</h4>
-                                    <p className='p-text'>{work.company}</p>
-                                </motion.div>
-                            )}
-
-                            {workIndex % 2 !== 0 && (
-                                <motion.div 
-                                    className='w-[230px] bg-[#D9D9D9]'
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                >
-                                    
-                                </motion.div>
-                            )}
 
                             <motion.div 
                                 key={experience.year} 
-                                className='w-[75px] h-[75px] rounded-[50%] mt-4 bg-[#cacaca] app__flex new-shadow'
+                                className='w-[230px] rounded-[1rem] bg-[#ffffff] flex items-start justify-start flex-col p-10 new-shadow'
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                             >
-                                {experience.year}
+                                <h5 className='bold-text'>{experience.year}</h5>
+                                <h4 className='bold-text'>{work.name}</h4>
+                                <p className='p-text'>{work.company}</p>
                             </motion.div>
-
-                            {workIndex % 2 === 0 && (
-                                <motion.div 
-                                    className='w-[230px] bg-[#D9D9D9]'
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                >
-                                    
-                                </motion.div>
-                            )}
-
-                            {workIndex % 2 !== 0 && (
-                                <motion.div 
-                                    className='w-[230px] rounded-[1rem] bg-[#ffffff] flex items-start justify-start flex-col p-10 new-shadow'
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                >
-                                    <h4 className='bold-text'>{work.name}</h4>
-                                    <p className='p-text'>{work.company}</p>
-                                </motion.div>
-                            )}
 
                         </motion.div>
 
@@ -136,6 +94,41 @@ export default function Skills() {
 
                 </div>
             ))}
+        </div> */}
+
+<div className='flex-1 flex justify-center items-center flex-col md:mt-[2rem] gap-5 mt-[2rem]'>
+          {experiences.map((experience) => (
+            <motion.div
+              className='w-[100%] h-[auto] flex flex-col p-5 hover:new-shadow cursor-pointer'
+              key={experience.year}
+            >
+                <div className='app__skills-exp-year'>
+                  <p className='bold-text'>{experience.year}</p>
+                </div>
+
+                <motion.div className='app__skills-exp-works'>
+                {experience.works.map((work) => (
+                  // <>
+                    <React.Fragment key={work.name}>
+                      <motion.div
+                        whileInView={{opacity: [0, 1]}}
+                        transition={{ duration: 0.5 }}
+                        className='app__skills-exp-work'
+                        data-tip
+                        data-for={work.name}
+                        key={work.name}
+                      >
+                        <h4 className='bold-text'>Worked as {work.name}</h4>
+                        <p className='p-text'>at {work.company}</p>
+                        <p className='p-text'>{work.desc}</p>
+                      </motion.div>
+
+                  </React.Fragment>
+                  // </>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
 
     </div>
