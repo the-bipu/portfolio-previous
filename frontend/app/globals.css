@@ -29,7 +29,7 @@ body {
     rgb(var(--primary-color));
 }
 
-/* scroll-bar designing starts */
+/* scroll-bar design starts */
 
 html::-webkit-scrollbar {
   width: .8rem;
@@ -43,7 +43,7 @@ html::-webkit-scrollbar-thumb {
   background: #aaaaaa;
 }
 
-/* scroll-bar designing ends */
+/* scroll-bar design ends */
 
 * {
   margin: 0;
@@ -59,20 +59,10 @@ html::-webkit-scrollbar-thumb {
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.normal-shadow {
-  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 .app__flex {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.app__navbar-menu {
-  div {
-      box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
-  }
 }
 
 .head-text {
@@ -81,14 +71,6 @@ html::-webkit-scrollbar-thumb {
   text-align: center;
   color: var(--black-color);
   text-transform: capitalize;
-
-  span {
-    color: var(--secondary-color);
-  }
-
-  @media screen and (max-width: 450px) {
-    font-size: 2rem;
-  }
 }
 
 .p-text {
@@ -107,6 +89,10 @@ html::-webkit-scrollbar-thumb {
 
 .transition-normal {
   transition: all 0.3s ease;
+}
+
+.normal-shadow {
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .normal-box-shadow {
