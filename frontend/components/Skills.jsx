@@ -10,7 +10,7 @@ export default function Skills() {
     const [skills, setSkills] = useState([]);
 
     useEffect(() => {
-        const query = '*[_type == "experiences"]';
+        const query = `*[_type == "experiences"] | order(title asc)`;
         const skillsQuery = '*[_type == "skills"]';
 
         client.fetch(query)
