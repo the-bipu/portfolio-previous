@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 import { motion } from 'framer-motion';
 import { urlFor, client } from '../app/client';
@@ -9,14 +8,14 @@ export default function About() {
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type == "abouts"]';
+    const query = `*[_type == "abouts"] | order(title asc)`;
 
     client.fetch(query)
       .then((data) => setAbouts(data))
   }, [])
 
   return (
-    <div id='about' className='w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#ffffff] p-10'>
+    <div id='about' className='w-[100%] lg:h-[748px] h-[auto] grid place-content-center bg-[#ffffff] p-10'>
 
         <motion.div
           className='color-[#fff] text-[30px] py-8 text-center'
@@ -39,6 +38,7 @@ export default function About() {
               </motion.div>
             ))}
         </div>
+
     </div>
   )
 }
