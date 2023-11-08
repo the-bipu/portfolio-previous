@@ -1,7 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import Image from 'next/image'
 
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
