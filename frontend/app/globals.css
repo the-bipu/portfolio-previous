@@ -107,3 +107,85 @@ html::-webkit-scrollbar-thumb {
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+.form--div {
+  width: 100%;
+  
+  margin: 0.75rem 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+
+  transition: all 0.3s ease-in-out;
+}
+
+.textarea-style {
+  width: 100%;
+  padding: 0.95rem;
+  border: none;
+  border-radius: 7px;
+  background-color: #edf2f8;
+
+  font-family: var(--font-base);
+  color: var(--secondary-color);
+  outline: none;
+}
+
+.textarea-style:hover {
+  box-shadow: 0 0 25px #edf2f8;
+}
+
+.submit--button {
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #313bac;
+
+    font-weight: 500;
+    color: #ffffff;
+    outline: none;
+    margin: 2rem 0 0 0;
+
+    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    cursor: pointer;
+}
+
+.app__footer-card {
+  min-width: 290px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #fef4f5;
+
+  transition: all 0.3s ease-in-out;
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin: 0 0.7rem;
+  }
+
+  p {
+    font-weight: 500;
+  }
+  a {
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+
+.app__footer-card:hover {
+  -shadow: 0 0 25px #fef4f5;
+}
+
+@media screen and (max-width: 450px) {
+  .app__footer-card {
+    width: 100%;
+  }
+}
