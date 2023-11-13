@@ -1,8 +1,7 @@
 'use client';
-import Image from 'next/image'
 import { useState } from 'react';
 
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { HiMenuAlt4 } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { navVariants, fadeIn } from '../utils/motion';
 
