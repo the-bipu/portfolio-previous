@@ -47,15 +47,15 @@ export default function Contact() {
         <div className='flex lg:flex-row flex-col items-center justify-center lg:gap-8 gap-0'>
           <div className='app__footer-card'>
             <img src="./email.png" alt="email" />
-            <a href="mailto:hello@gmail.com" className='p-text'>
-              Hello@gmail.com
+            <a href="mailto:thebippu@gmail.com" className='p-text'>
+              thebippu@gmail.com
             </a>
           </div>
 
           <div className='app__footer-card'>
             <img src="./mobile.png" alt="mobile" />
             <a href="tel: +1 (123) 456-789" className='p-text'>
-            +1 (123) 456-789
+            +91 70048 17946
             </a>
           </div>
         </div>

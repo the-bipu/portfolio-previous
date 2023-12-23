@@ -101,7 +101,7 @@ export default function Skills() {
             <motion.div
               whileInView={{ x: [20, 0], opacity: [0, 1] }}
               transition={{ duration: 1, type: 'spring', stiffness:"120" }}
-              className='w-[100%] h-[auto] flex flex-col p-10 new-shadow cursor-pointer'
+              className='md:w-[500px] w-[95%] h-[auto] flex flex-col md:p-10 p-4 new-shadow cursor-pointer'
               key={experience.year}
             >
                 <div className=''>
