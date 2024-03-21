@@ -11,7 +11,7 @@ export default function Home() {
         
         <div className='flex lg:flex-row flex-col lg:gap-0 gap-10 items-center color-[#000] py-12 lg:px-16 px-0'>
           <img src="./Ellipse-3.png" alt="" className='w-[320px] h-[auto] z-0 absolute top-[170px] lg:left-[240px] left-15 lg:block hidden' />
-          <img src="./Ellipse-4.png" alt="" className='w-[auto] h-[auto] z-0 absolute bottom-0 left-30 lg:block hidden' />
+          <img src="./Ellipse-4.png" alt="" className='w-[auto] h-[auto] z-0 absolute -bottom-[45px] left-30 lg:block hidden' />
           <img src="./Ellipse-5.png" alt="" className='w-[auto] h-[auto] z-0 absolute top-[125px] right-10 lg:block hidden' />
           <img src="./Ellipse-6.png" alt="" className='w-[auto] h-[auto] z-0 absolute top-[165px] left-0 lg:block hidden' />
 
