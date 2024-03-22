@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { motion } from 'framer-motion';
 import { navVariants, fadeIn } from '../utils/motion';
@@ -11,8 +11,10 @@ import { BsPersonBoundingBox } from "react-icons/bs";
 import { PiSuitcaseSimpleFill } from "react-icons/pi";
 import { SiNextdotjs } from "react-icons/si";
 import { MdContacts } from "react-icons/md";
+import { UserContext } from '@/context/userContext';
 
 export default function Navbar() {
+  const { activeTab, setActiveTab } = useContext(UserContext);
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -34,20 +36,20 @@ export default function Navbar() {
           className='md:flex hidden flex-row md:justify-evenly justify-between md:px-0 px-10 items-center w-[80vw] h-[70px] bg-[#ffffff70] rounded-[50px] shadow-md'
         >
           <div className="tab-div lg:block hidden jolly-lodger">The-Bipu</div>
-          <ScrollLink to="home" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-            <p>Home</p>
+          <ScrollLink href='/' to="home" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p onClick={() => setActiveTab('home')}>Home</p>
           </ScrollLink>
-          <ScrollLink to="about" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-            <p>About</p>
+          <ScrollLink href='/' to="about" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p onClick={() => setActiveTab('about')}>About</p>
           </ScrollLink>
-          <ScrollLink to="work" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-            <p>Work</p>
+          <ScrollLink href='/' to="work" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p onClick={() => setActiveTab('work')}>Work</p>
           </ScrollLink>
-          <ScrollLink to="skills" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-            <p>Skills</p>
+          <ScrollLink href='/' to="skills" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p onClick={() => setActiveTab('skills')}>Skills</p>
           </ScrollLink>
-          <ScrollLink to="contact" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-            <p>Contact</p>
+          <ScrollLink href='/' to="contact" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p onClick={() => setActiveTab('contact')}>Contact</p>
           </ScrollLink>
 
         </motion.div>
@@ -60,20 +62,20 @@ export default function Navbar() {
             transition={{ duration: 0.85, ease: 'easeOut' }}
             className='flex flex-col gap-5 justify-evenly items-center w-12 h-[auto] bg-[#9b9b9b8f] rounded-r-lg py-6 z-10'
           >
-            <ScrollLink to="home" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
-              <SiHomeadvisor onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-[#ffffffc7]`} />
+            <ScrollLink href='/' to="home" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <SiHomeadvisor onClick={() => {setToggle(!toggle); setActiveTab('home')}} className={`text-black transition-all hover:text-[#ffffffc7]`} />
             </ScrollLink>
-            <ScrollLink to="about" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
-              <BsPersonBoundingBox onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            <ScrollLink href='/' to="about" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <BsPersonBoundingBox onClick={() => {setToggle(!toggle); setActiveTab('about')}} className={`text-black transition-all hover:text-white`} />
             </ScrollLink>
-            <ScrollLink to="work" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
-              <PiSuitcaseSimpleFill onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            <ScrollLink href='/' to="work" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <PiSuitcaseSimpleFill onClick={() => {setToggle(!toggle); setActiveTab('work')}} className={`text-black transition-all hover:text-white`} />
             </ScrollLink>
-            <ScrollLink to="skills" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
-              <SiNextdotjs onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            <ScrollLink href='/' to="skills" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <SiNextdotjs onClick={() => {setToggle(!toggle); setActiveTab('skills')}} className={`text-black transition-all hover:text-white`} />
             </ScrollLink>
-            <ScrollLink to="contact" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
-              <MdContacts onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            <ScrollLink href='/' to="contact" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <MdContacts onClick={() => {setToggle(!toggle); setActiveTab('contact')}} className={`text-black transition-all hover:text-white`} />
             </ScrollLink>
           </motion.div>
         </div>
