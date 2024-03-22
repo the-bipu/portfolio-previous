@@ -89,7 +89,7 @@ export default function Skills() {
                     data-for={work.name}
                     key={work.name}
                   >
-                    <h4 className='text-[1.1rem] font-semibold'>Worked as {work.name}</h4>
+                    <p className='text-[1.1rem] font-semibold'>Worked as {work.name}</p>
                     <p className='text-[1rem]'>at {work.company}</p>
                     <p className='text-[1rem]'>{work.desc}</p>
                   </motion.div>
