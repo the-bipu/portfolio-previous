@@ -78,14 +78,14 @@ export default function Work() {
             className='w-[270px] flex-col m-[2rem] p-[1rem] rounded-[0.5rem] bg-[#fff] text-[#000] cursor-pointer transition-normal app__flex hover:normal-box-shadow' key={index}
           >
             <div className='w-[100%] h-[230px] relative app__flex'>
-              <img src={urlFor(work.imgUrl)} alt={work.name} className='w-[100%] h-[100%] rounded-[0.5rem] object-cover' />
+              <img src={urlFor(work.imgUrl)} alt='project screenshots' className='w-[100%] h-[100%] rounded-[0.5rem] object-cover' />
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
                 className='absolute w-[100%] h-[100%] top-0 bottom-0 right-0 left-0 bg-[#00000080] rounded-[0.5rem] opacity-0 transition-normal app__flex'
               >
-                <a href={work.projectLink} target="_blank" rel='norefer'>
+                <a href={work.projectLink} alt='/' target="_blank" rel='norefer'>
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -95,7 +95,7 @@ export default function Work() {
                     <AiFillEye className='w-[50%] h-[50%] text-white' />
                   </motion.div>
                 </a>
-                <a href={work.codeLink} target="_blank" rel='norefer'>
+                <a href={work.codeLink} alt='/' target="_blank" rel='norefer'>
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, 0.9] }}
@@ -109,7 +109,7 @@ export default function Work() {
             </div>
 
             <div className='p-[0.5rem] w-[100%] relative flex-col app__flex'>
-              <h4 className='bold-text mt-[1rem] leading-6 sm:text-[0.9rem]'>{work.title}</h4>
+              <p className='bold-text mt-[1rem] leading-6 sm:text-[0.9rem]'>{work.title}</p>
               <p className='p-text' style={{ marginTop: 10 }}>
                 {work.description}
               </p>
