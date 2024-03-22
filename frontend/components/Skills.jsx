@@ -1,12 +1,14 @@
 'use client';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Image from 'next/image'
 
 import { motion } from 'framer-motion';
 import { urlFor, client } from '../app/client';
 import Scroller from './Scroller';
+import { UserContext } from '@/context/userContext';
 
 export default function Skills() {
+  const { activeTab } = useContext(UserContext);
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
 
@@ -26,9 +28,9 @@ export default function Skills() {
   }, [])
 
   return (
-    <div id='skills' className='w-[100%] h-[auto] flex flex-col items-center bg-[#ffffff] p-10'>
+    <div id='skills' className=' relative w-[100%] h-[auto] flex flex-col items-center bg-[#ffffff] p-10'>
 
-      <Scroller />
+      {activeTab === 'skills' && <Scroller />}
 
       <motion.div
         className='color-[#fff] text-[30px] text-[#000] pt-8 pb-2 text-center'

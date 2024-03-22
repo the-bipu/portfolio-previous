@@ -1,12 +1,14 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import { motion } from 'framer-motion';
 import { client } from '../app/client';
 import Scroller from './Scroller';
+import { UserContext } from '@/context/userContext';
 
 export default function Contact() {
 
+  const { activeTab } = useContext(UserContext);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [loading, setLoading] = useState(false);
@@ -37,9 +39,9 @@ export default function Contact() {
   }
 
   return (
-    <div id='contact' className='w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
+    <div id='contact' className=' relative w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
 
-      <Scroller />
+      {activeTab === 'contact' && <Scroller />}
 
       <motion.div
         className='color-[#fff] text-[30px] text-[#000] pt-8 pb-2 text-center'

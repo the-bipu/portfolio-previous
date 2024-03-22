@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 
 import { motion } from 'framer-motion';
@@ -7,8 +7,10 @@ import { fadeIn } from '../utils/motion';
 
 import { urlFor, client } from '../app/client';
 import Scroller from './Scroller';
+import { UserContext } from '@/context/userContext';
 
 export default function Work() {
+  const { activeTab } = useContext(UserContext);
   const [activeFilter, setAtiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
@@ -41,9 +43,9 @@ export default function Work() {
   }
 
   return (
-    <div id='work' className='w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
+    <div id='work' className=' relative w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
 
-      <Scroller />
+      {activeTab === 'work' && <Scroller />}
 
       <motion.div
         variants={fadeIn('up', 'tween', 0.6, 1)}

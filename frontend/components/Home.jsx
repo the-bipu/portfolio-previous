@@ -4,12 +4,17 @@ import Navbar from '@/components/Navbar'
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn } from '../utils/motion';
 import Scroller from './Scroller';
+import { useContext } from 'react';
+import { UserContext } from '@/context/userContext';
 
 export default function Home() {
+  const { activeTab } = useContext(UserContext);
+
   return (
-    <div id='home' className='w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
+    <div id='home' className='relative w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
         <Navbar />
-        <Scroller />
+
+        {activeTab === 'home' && <Scroller />}
         
         <div className='flex lg:flex-row flex-col lg:gap-0 gap-10 items-center color-[#000] py-12 lg:px-16 px-0'>
           <img src="./Ellipse-3.png" alt="" className='w-[320px] h-[auto] z-0 absolute top-[170px] lg:left-[240px] left-15 lg:block hidden' />

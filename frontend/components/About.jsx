@@ -1,11 +1,13 @@
 'use client';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import { motion } from 'framer-motion';
 import { urlFor, client } from '../app/client';
 import Scroller from './Scroller';
+import { UserContext } from '@/context/userContext';
 
 export default function About() {
+  const { activeTab } = useContext(UserContext);
   const [abouts, setAbouts] = useState([]);
 
   useEffect(() => {
@@ -16,9 +18,9 @@ export default function About() {
   }, [])
 
   return (
-    <div id='about' className='w-[100%] lg:h-[748px] h-[auto] grid place-content-center bg-[#ffffff] p-10'>
+    <div id='about' className=' relative w-[100%] lg:h-[748px] h-[auto] grid place-content-center bg-[#ffffff] p-10'>
 
-      <Scroller />
+      {activeTab === 'about' && <Scroller />}
 
       <motion.div
         className='color-[#fff] text-[30px] py-8 text-center'
