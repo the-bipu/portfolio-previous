@@ -3,11 +3,13 @@
 import Navbar from '@/components/Navbar'
 import { motion } from 'framer-motion';
 import { fadeIn, slideIn } from '../utils/motion';
+import Scroller from './Scroller';
 
 export default function Home() {
   return (
     <div id='home' className='w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
         <Navbar />
+        <Scroller />
         
         <div className='flex lg:flex-row flex-col lg:gap-0 gap-10 items-center color-[#000] py-12 lg:px-16 px-0'>
           <img src="./Ellipse-3.png" alt="" className='w-[320px] h-[auto] z-0 absolute top-[170px] lg:left-[240px] left-15 lg:block hidden' />
@@ -18,7 +20,7 @@ export default function Home() {
           <motion.div 
             variants={fadeIn('right', 'tween', 0.2, 1)}
             initial="hidden" whileInView="show"
-            className="normal-shadow text-[23px] lg:w-[55%] w-[100%] h-[auto] text-center lg:px-24 px-10 z-10"
+            className="normal-shadow md:text-[23px] text-[16px] lg:w-[55%] w-[100%] h-[auto] text-center lg:px-24 px-0 z-10"
           >
             Hello 🍃 <br />
             I’m The-Bipu 🤖 and <br />
