@@ -1,67 +1,83 @@
 'use client';
 import { useState } from 'react';
 
-import { HiMenuAlt4 } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { navVariants, fadeIn } from '../utils/motion';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+
+import { HiMenuAlt4 } from 'react-icons/hi';
+import { SiHomeadvisor } from "react-icons/si";
+import { BsPersonBoundingBox } from "react-icons/bs";
+import { PiSuitcaseSimpleFill } from "react-icons/pi";
+import { SiNextdotjs } from "react-icons/si";
+import { MdContacts } from "react-icons/md";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div>
-      <motion.div
-        variants={navVariants}
-        initial="hidden"
-        whileInView="show"
-        className='flex flex-row justify-evenly items-center w-[80vw] h-[70px] bg-[#ffffff70] rounded-[50px] shadow-md'
-      >
-        <div className="logo w-[35px] h-[35px] lg:hidden block">
-          <img src="./Ellipse-5.png" alt="" />
+    <>
+      <div>
+
+        <div className='w-[82vw] relative h-auto md:hidden flex items-start justify-start'>
+          <div className="tab-div jolly-lodger">The-Bipu</div>
         </div>
 
-        <div className="tab-div lg:block hidden jolly-lodger">The-Bipu</div>
-        <ScrollLink to="home" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-          <p>Home</p>
-        </ScrollLink>
-        <ScrollLink to="about" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-          <p>About</p>
-        </ScrollLink>
-        <ScrollLink to="work" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-          <p>Work</p>
-        </ScrollLink>
-        <ScrollLink to="skills" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-          <p>Skills</p>
-        </ScrollLink>
-        <ScrollLink to="contact" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
-          <p>Contact</p>
-        </ScrollLink>
-
-        <div className="w-[35px] h-[35px] flex items-center justify-center bg-blue-900 rounded-[50%] text-white text-[20px] cursor-pointer lg:hidden">
+        <div className=" fixed top-10 right-10 w-[35px] h-[35px] flex items-center justify-center bg-blue-900 rounded-[50%] text-white text-[20px] cursor-pointer lg:hidden">
           <HiMenuAlt4 onClick={() => setToggle(!toggle)} />
         </div>
-      </motion.div>
+
+        <motion.div
+          variants={navVariants}
+          initial="hidden"
+          whileInView="show"
+          className='md:flex hidden flex-row md:justify-evenly justify-between md:px-0 px-10 items-center w-[80vw] h-[70px] bg-[#ffffff70] rounded-[50px] shadow-md'
+        >
+          <div className="tab-div lg:block hidden jolly-lodger">The-Bipu</div>
+          <ScrollLink to="home" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p>Home</p>
+          </ScrollLink>
+          <ScrollLink to="about" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p>About</p>
+          </ScrollLink>
+          <ScrollLink to="work" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p>Work</p>
+          </ScrollLink>
+          <ScrollLink to="skills" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p>Skills</p>
+          </ScrollLink>
+          <ScrollLink to="contact" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div lg:block hidden`}>
+            <p>Contact</p>
+          </ScrollLink>
+
+        </motion.div>
+
+      </div>
 
       {toggle && (
-        <div className='sticky lg:hidden h-[auto] w-[50%]'>
+        <div className='fixed lg:hidden h-full w-full -bottom-96'>
           <motion.div
-            // variants={navVariants}
-            // initial="hidden"
-            // whileInView="show"
             transition={{ duration: 0.85, ease: 'easeOut' }}
-            className='flex flex-col gap-5 justify-evenly items-center w-[80vw] h-[auto] bg-[#fff] rounded-[50px] shadow-md p-5 z-10'
+            className='flex flex-col gap-5 justify-evenly items-center w-12 h-[auto] bg-[#9b9b9b8f] rounded-r-lg py-6 z-10'
           >
-            <a href='#main' className="tab-div">Home</a>
-            <a href='#about' className='tab-div'>About</a>
-            <a href='#work' className='tab-div'>Work</a>
-            <a href='#skills' className='tab-div'>Skills</a>
-            <a href='#education' className='tab-div'>Education</a>
-            <a href='#contact' className='tab-div'>Contact</a>
+            <ScrollLink to="home" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <SiHomeadvisor onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-[#ffffffc7]`} />
+            </ScrollLink>
+            <ScrollLink to="about" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <BsPersonBoundingBox onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            </ScrollLink>
+            <ScrollLink to="work" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <PiSuitcaseSimpleFill onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            </ScrollLink>
+            <ScrollLink to="skills" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <SiNextdotjs onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            </ScrollLink>
+            <ScrollLink to="contact" spy={true} smooth={true} duration={500} className={`cursor-pointer tab-div`}>
+              <MdContacts onClick={() => setToggle(!toggle)} className={`text-black transition-all hover:text-white`} />
+            </ScrollLink>
           </motion.div>
         </div>
       )}
-
-    </div>
+    </>
   )
 }
