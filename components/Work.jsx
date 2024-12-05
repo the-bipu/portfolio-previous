@@ -43,7 +43,7 @@ export default function Work() {
   }
 
   return (
-    <div id='work' className=' relative w-[100%] lg:h-[748px] h-[auto] flex flex-col items-center bg-[#D9D9D9] p-10'>
+    <div id='work' className=' relative w-[100%] h-auto flex flex-col items-center bg-[#D9D9D9] p-10'>
 
       {activeTab === 'work' && <Scroller />}
 
